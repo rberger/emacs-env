@@ -6,7 +6,7 @@
 
 (eval-after-load "color-theme"
  '(progn
-    (color-theme-calm-forest)))
+    (color-theme-hober)))
 
 (global-hl-line-mode)
 
@@ -102,7 +102,7 @@
 ;; maxframe
 (require 'maxframe)
 (setq mf-max-width *MONITOR-WIDTH*)  ;; Pixel width of main monitor.
-(add-hook 'window-setup-hook 'maximize-frame t)
+;;(add-hook 'window-setup-hook 'maximize-frame t)
 
 ;; revive
 (autoload 'save-current-configuration "revive" "Save status" t)

@@ -18,6 +18,7 @@
 ;(add-to-list 'load-path (concat *EMACS-ENV* "/packages/swank-clojure"))
 (add-to-list 'load-path (concat *EMACS-ENV* "/packages/slime"))
 
+(load-file (concat *EMACS-ENV* "/rberger.el"))
 (load-file (concat *EMACS-ENV* "/init/init_clojure.el"))
 (load-file (concat *EMACS-ENV* "/init/init_ruby.el"))
 (load-file (concat *EMACS-ENV* "/init/init_emacs.el"))
@@ -32,6 +33,7 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(show-paren-mode t)
+ '(standard-indent 2)
  '(weblogger-config-alist (quote (("TechBehindTech" "http://techbehindtech.com/xmlrpc.php" "sivajag" "" "11954221")))))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
@@ -39,3 +41,6 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(cursor ((t (:background "white" :weight normal :height 140 :width normal)))))
+
+;; start emacs server (for use with emacsclient):
+(server-start)
