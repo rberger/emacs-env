@@ -1,46 +1,20 @@
-(setq *EMACS-ENV* "~/.emacs.d")
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
 
-;;; This was installed by package-install.el.
-;;; This provides support for the package system and
-;;; interfacing with ELPA, the package archive.
-;;; Move this code earlier if you want to reference
-;;; packages in your .emacs.
-(when
-    (load
-     (expand-file-name "~/.emacs.d/elpa/package.el"))
-  (package-initialize))
+(when (not package-archive-contents)
+  (package-refresh-contents))
 
-(load-file (concat *EMACS-ENV* "/user-setup.el"))
+(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-eshell
+                                  starter-kit-bindings scpaste
+                                  clojure-mode clojure-test-mode
+                                  markdown-mode yaml-mode tuareg
+                                  marmalade oddmuse scpaste))
 
-(add-to-list 'load-path *EMACS-ENV*)
-(add-to-list 'load-path (concat *EMACS-ENV* "/packages"))
-(add-to-list 'load-path (concat *EMACS-ENV* "/packages/clojure-mode"))
-;(add-to-list 'load-path (concat *EMACS-ENV* "/packages/swank-clojure"))
-(add-to-list 'load-path (concat *EMACS-ENV* "/packages/slime"))
-
-(load-file (concat *EMACS-ENV* "/rberger.el"))
-(load-file (concat *EMACS-ENV* "/init/init_clojure.el"))
-(load-file (concat *EMACS-ENV* "/init/init_ruby.el"))
-(load-file (concat *EMACS-ENV* "/init/init_emacs.el"))
-(load-file (concat *EMACS-ENV* "/init/init_javascript.el"))
-
-(load-file (concat *EMACS-ENV* "/custom/key_bindings.el"))
-(load-file (concat *EMACS-ENV* "/init/init_color.el"))
-
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(show-paren-mode t)
- '(standard-indent 2)
- '(weblogger-config-alist (quote (("TechBehindTech" "http://techbehindtech.com/xmlrpc.php" "sivajag" "" "11954221")))))
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(cursor ((t (:background "white" :weight normal :height 140 :width normal)))))
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
 
 ;; start emacs server (for use with emacsclient):
 (server-start)
