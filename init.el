@@ -7,6 +7,7 @@
   (package-refresh-contents))
 
 (defvar my-packages '(starter-kit starter-kit-lisp starter-kit-eshell
+                                  starter-kit-js starter-kit-ruby
                                   starter-kit-bindings scpaste
                                   clojure-mode clojure-test-mode
                                   markdown-mode yaml-mode tuareg

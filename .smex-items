@@ -1,0 +1,21 @@
+
+;; ----- smex-history -----
+(
+ server-start
+ move-to-window-line
+ version
+ eval-buffer
+ package-install
+ cd
+ 5x5
+)
+
+;; ----- smex-data -----
+(
+ (eval-buffer . 3)
+ (package-install . 1)
+ (switch-window . 1)
+ (version . 1)
+ (move-to-window-line . 1)
+ (server-start . 3)
+)
