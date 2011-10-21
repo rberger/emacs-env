@@ -1,4 +1,7 @@
 elpa/
+places
+url/
+backups
 *~
 \#*\#
 /.emacs.desktop
