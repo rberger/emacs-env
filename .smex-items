@@ -1,21 +1,34 @@
 
 ;; ----- smex-history -----
 (
- server-start
- move-to-window-line
- version
  eval-buffer
- package-install
- cd
- 5x5
+ enable-theme
+ color-theme-select
+ delete-pair
+ package-refresh-contents
+ package-list-packages
+ package-menu-mode
 )
 
 ;; ----- smex-data -----
 (
- (eval-buffer . 3)
- (package-install . 1)
+ (eval-buffer . 19)
+ (package-install . 4)
  (switch-window . 1)
- (version . 1)
+ (version . 2)
  (move-to-window-line . 1)
  (server-start . 3)
+ (sort-lines . 1)
+ (replace-string . 1)
+ (color-theme-print . 1)
+ (enable-theme . 13)
+ (apropos . 1)
+ (color-theme-select . 11)
+ (load-theme . 1)
+ (package-initialize . 1)
+ (package-menu-mode . 1)
+ (package-list-packages . 1)
+ (package-refresh-contents . 2)
+ (color-theme-describe . 1)
+ (delete-pair . 3)
 )

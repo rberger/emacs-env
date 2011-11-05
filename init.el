@@ -11,11 +11,13 @@
                                   starter-kit-bindings scpaste
                                   clojure-mode clojure-test-mode
                                   markdown-mode yaml-mode tuareg
-                                  marmalade oddmuse scpaste))
+                                  marmalade oddmuse scpaste color-theme))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
+
+(load-file "~/.emacs.d/user.el")
 
 ;; start emacs server (for use with emacsclient):
 (server-start)
